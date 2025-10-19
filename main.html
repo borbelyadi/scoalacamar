@@ -1,0 +1,96 @@
+<HTML>
+<head><script language="JavaScript1.1">
+<!--
+
+/*
+JavaScript Image slideshow:
+By JavaScript Kit (www.javascriptkit.com)
+Over 200+ free JavaScript here!
+*/
+
+var slideimages=new Array()
+var slidelinks=new Array()
+function slideshowimages(){
+for (i=0;i<slideshowimages.arguments.length;i++){
+slideimages[i]=new Image()
+slideimages[i].src=slideshowimages.arguments[i]
+}
+}
+
+function slideshowlinks(){
+for (i=0;i<slideshowlinks.arguments.length;i++)
+slidelinks[i]=slideshowlinks.arguments[i]
+}
+
+function gotoshow(){
+if (!window.winslide||winslide.closed)
+winslide=window.open(slidelinks[whichlink])
+else
+winslide.location=slidelinks[whichlink]
+winslide.focus()
+}
+
+//-->
+</script></head>
+
+<BODY background="Ht3.jpg" leftmargin=0>
+<table><tr>
+
+<td rowspan="2"><p><a href="javascript:gotoshow()">
+<div style="display:inline-block;background-color:#a95735;padding:2px;text-align:center;width:600px">
+<img src="food1.jpg" name="slide" border=0 width=600 height=450 style="border:0px solid transparent;margin:auto;">
+<span style="display:block;width:100%;color:#FFF;font-family:'Monotype Corsiva';text-align:center;"></span> </div>
+</a>
+
+<script>
+<!--
+
+//configure the paths of the images, plus corresponding target links
+slideshowimages("4i.JPG","5i.JPG","6i.JPG","8i.JPG","10i.JPG","7i.JPG","9i.JPG","1i.JPG","3i.JPG","2i.JPG")
+
+
+//configure the speed of the slideshow, in miliseconds
+var slideshowspeed=4000
+
+var whichlink=0
+var whichimage=0
+function slideit(){
+if (!document.images)
+return
+document.images.slide.src=slideimages[whichimage].src
+whichlink=whichimage
+if (whichimage<slideimages.length-1)
+whichimage++
+else
+whichimage=0
+setTimeout("slideit()",slideshowspeed)
+}
+slideit()
+
+//-->
+</script></p></td>
+<td >
+<td>
+<P align=justify><FONT face ="Bookman old style" size =4 color=#400000>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>MISIUNEA &#350;COLII:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x218;coala este locul în care grija &#351;i încrederea sunt mai presus de restricþii &#351;i ameninþãri &#351;i unde fiecare persoanã indiferent de etnie, este întrebatã, ajutatã &#351;i inspiratã sã trãiascã cu astfel de idealuri &#351;i valori precum bunãtatea, corectitudinea  &#351;i responsabilitatea. &#x218;coala este un loc în care elevii trebuie sã se simtã acasã. De aceea ne propunem sã oferim &#351;anse egale pentru educaþie &#351;i culturã tuturor elevilor.</FONT></P><BR>
+<P align=justify><FONT face ="Bookman old style" size =4 color=#400000>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>DEVIZA &#350;COLII:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x218;ANSE EGALE TUTUROR  COPIILOR.</FONT></P>
+</td>
+
+</tr>
+</TABLE>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
