@@ -1,14 +1,357 @@
-<HTML>
-<HEAD>
-<meta name="KEYWORDS" content="scoalacamar, Scoala Gimnaziala Nr.1 Camar, Scoala Gimn. Nr.1 Camar, Scoala Camar, Sc. Gim. Nr. 1 Camar"/>
-<TITLE>Scoala Gimnaziala Nr.1 Camar</TITLE>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<HEAD>
-<FRAMESET ROWS="150,*" BORDER=0>
-	<FRAME NAME="banner" SRC="banner.html">
-	<FRAMESET COLS="15%, *">
-		<FRAME NAME="cuprins" SRC="cuprins.html">
-		<FRAME NAME="main" SRC="main.html">
-	</FRAMESET>
-</FRAMESET>
-</HTML>
+  <title>Școala Gimnazială Nr. 1 Camăr</title>
+  <meta name="description"
+        content="Site-ul Școlii Gimnaziale Nr. 1 Camăr">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #33251f;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+      background:
+        linear-gradient(rgba(255, 250, 242, 0.92),
+                        rgba(255, 250, 242, 0.92)),
+        url("Ht3.jpg") center / cover fixed;
+    }
+
+    .container {
+      width: min(1150px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    header {
+      padding: 42px 16px 32px;
+      color: white;
+      text-align: center;
+      background:
+        linear-gradient(rgba(67, 30, 18, 0.75),
+                        rgba(67, 30, 18, 0.92)),
+        url("Ht3.jpg") center / cover;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      text-transform: uppercase;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      color: #ffe4bd;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-style: italic;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #4b2417;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin: 0;
+      padding: 8px;
+      list-style: none;
+    }
+
+    nav a {
+      display: block;
+      padding: 10px 15px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      background: #965437;
+    }
+
+    main {
+      padding: 38px 0 50px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 28px;
+    }
+
+    .card {
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(65, 34, 20, 0.18);
+    }
+
+    .slideshow {
+      position: relative;
+      min-height: 450px;
+      background: #d5bfa9;
+    }
+
+    .slideshow img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .caption {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      padding: 35px 20px 18px;
+      color: white;
+      font-size: 1.15rem;
+      background: linear-gradient(transparent, rgba(48, 20, 10, 0.9));
+    }
+
+    .mission {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #4b2417;
+    }
+
+    .mission p {
+      text-align: justify;
+    }
+
+    .motto {
+      margin-top: 10px;
+      padding: 18px;
+      color: white;
+      text-align: center;
+      background: linear-gradient(135deg, #965437, #4b2417);
+      border-radius: 12px;
+    }
+
+    .motto strong {
+      display: block;
+      text-transform: uppercase;
+    }
+
+    .links {
+      padding-top: 35px;
+    }
+
+    .links h2 {
+      text-align: center;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .link-card {
+      padding: 22px 12px;
+      color: #4b2417;
+      text-align: center;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(65, 34, 20, 0.12);
+      transition: transform 0.2s;
+    }
+
+    .link-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .icon {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 2rem;
+    }
+
+    footer {
+      padding: 24px;
+      color: white;
+      text-align: center;
+      background: #4b2417;
+    }
+
+    footer p {
+      margin: 3px;
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .link-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: calc(100% - 20px);
+      }
+
+      nav ul {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      nav a {
+        white-space: nowrap;
+      }
+
+      .link-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .slideshow,
+      .slideshow img {
+        min-height: 290px;
+        height: 290px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Școala Gimnazială Nr. 1 Camăr</h1>
+    <p>Bine ați venit pe site-ul școlii noastre!</p>
+  </header>
+
+  <nav aria-label="Navigare principală">
+    <ul>
+      <li><a href="index.html">Acasă</a></li>
+      <li><a href="camar.html">Comuna Camăr</a></li>
+      <li><a href="istoric.html">Istoricul școlii</a></li>
+      <li><a href="CD.html">Cadre didactice</a></li>
+      <li><a href="nou.html">Noutăți</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card slideshow">
+        <img id="slide"
+             src="4i.JPG"
+             alt="Imagine din viața școlii">
+
+        <p class="caption">
+          Împreună pentru educația copiilor noștri
+        </p>
+      </div>
+
+      <article class="card mission">
+        <h2>Misiunea școlii</h2>
+
+        <p>
+          Școala este locul în care grija și încrederea sunt mai
+          presus de restricții și amenințări. Fiecare persoană,
+          indiferent de etnie, este ajutată și inspirată să trăiască
+          după valori precum bunătatea, corectitudinea și
+          responsabilitatea.
+        </p>
+
+        <p>
+          Ne propunem să oferim șanse egale pentru educație și
+          cultură tuturor elevilor, într-un loc în care aceștia
+          să se simtă ca acasă.
+        </p>
+
+        <div class="motto">
+          <strong>Deviza școlii</strong>
+          Șanse egale tuturor copiilor
+        </div>
+      </article>
+    </section>
+
+    <section class="links">
+      <h2>Descoperiți școala noastră</h2>
+
+      <div class="link-grid">
+        <a class="link-card" href="camar.html">
+          <span class="icon">🏘️</span>
+          <strong>Comuna Camăr</strong>
+        </a>
+
+        <a class="link-card" href="istoric.html">
+          <span class="icon">🏫</span>
+          <strong>Istoricul școlii</strong>
+        </a>
+
+        <a class="link-card" href="CD.html">
+          <span class="icon">👩‍🏫</span>
+          <strong>Cadre didactice</strong>
+        </a>
+
+        <a class="link-card" href="nou.html">
+          <span class="icon">📢</span>
+          <strong>Noutăți</strong>
+        </a>
+
+        <a class="link-card" href="contact.html">
+          <span class="icon">✉️</span>
+          <strong>Contact</strong>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Școala Gimnazială Nr. 1 Camăr</strong></p>
+    <p>&copy; <span id="year"></span> Toate drepturile rezervate.</p>
+  </footer>
+
+  <script>
+    const images = [
+      "4i.JPG",
+      "5i.JPG",
+      "6i.JPG",
+      "8i.JPG",
+      "10i.JPG",
+      "7i.JPG",
+      "9i.JPG",
+      "1i.JPG",
+      "3i.JPG",
+      "2i.JPG"
+    ];
+
+    const slide = document.getElementById("slide");
+    let position = 0;
+
+    setInterval(function () {
+      position = (position + 1) % images.length;
+      slide.src = images[position];
+    }, 4000);
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
