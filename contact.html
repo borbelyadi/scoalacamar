@@ -1,33 +1,479 @@
-<HTML>
+<!DOCTYPE html>
+<html lang="ro">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | Școala Gimnazială Nr. 1 Camăr</title>
+
+  <meta
+    name="description"
+    content="Datele de contact ale Școlii Gimnaziale Nr. 1 Camăr."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: #33251f;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+      background:
+        linear-gradient(
+          rgba(255, 250, 242, 0.94),
+          rgba(255, 250, 242, 0.94)
+        ),
+        url("Ht3.jpg") center / cover fixed;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 42px 16px 34px;
+      color: white;
+      text-align: center;
+      background:
+        linear-gradient(
+          rgba(67, 30, 18, 0.76),
+          rgba(67, 30, 18, 0.93)
+        ),
+        url("Ht3.jpg") center / cover;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      color: #ffe4bd;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      font-style: italic;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #4b2417;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin: 0;
+      padding: 8px;
+      list-style: none;
+    }
+
+    nav a {
+      display: block;
+      padding: 10px 15px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible,
+    nav a[aria-current="page"] {
+      background: #965437;
+      outline: none;
+    }
+
+    nav a:hover {
+      transform: translateY(-1px);
+    }
+
+    main {
+      padding: 38px 0 55px;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(139, 74, 47, 0.18);
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(65, 34, 20, 0.16);
+    }
+
+    .contact-details {
+      padding: 34px;
+    }
+
+    .contact-details h2 {
+      margin: 0 0 12px;
+      color: #4b2417;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+    }
+
+    .contact-details > p {
+      margin: 0 0 25px;
+      color: #674332;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 15px;
+      margin-bottom: 26px;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      background: #fffaf3;
+      border: 1px solid #ecd8bf;
+      border-radius: 13px;
+    }
+
+    .contact-icon {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      font-size: 1.45rem;
+      background: #f3ddc3;
+      border-radius: 11px;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 3px;
+      color: #4b2417;
+    }
+
+    .contact-item p {
+      margin: 0;
+      color: #674332;
+    }
+
+    .contact-item a {
+      color: #674332;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: #965437;
+      text-decoration: underline;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 17px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      background: #4b2417;
+      border-radius: 9px;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      background: #965437;
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .school-image {
+      position: relative;
+      min-height: 520px;
+      background: #d8c0a9;
+    }
+
+    .school-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+    }
+
+    .image-caption {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      padding: 38px 20px 18px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      background:
+        linear-gradient(
+          transparent,
+          rgba(48, 20, 10, 0.92)
+        );
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 11px 18px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      background: #4b2417;
+      border-radius: 9px;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      background: #965437;
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    footer {
+      padding: 24px 16px;
+      color: white;
+      text-align: center;
+      background: #4b2417;
+    }
+
+    footer p {
+      margin: 3px 0;
+    }
+
+    @media (max-width: 850px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .school-image {
+        order: -1;
+        min-height: 380px;
+      }
+
+      .school-image img {
+        min-height: 380px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: calc(100% - 20px);
+      }
+
+      header {
+        padding-top: 32px;
+      }
+
+      nav ul {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      nav a {
+        white-space: nowrap;
+      }
+
+      main {
+        padding-top: 24px;
+      }
+
+      .contact-details {
+        padding: 23px;
+      }
+
+      .actions {
+        display: grid;
+      }
+
+      .button {
+        text-align: center;
+      }
+
+      .school-image,
+      .school-image img {
+        min-height: 290px;
+      }
+    }
+  </style>
 </head>
 
-<BODY background="Ht3.jpg">
-<p align=center><font size=6 face="Bookman old style" color=#400000><b>&#350;COALA GIMNAZIAL&#258; NR.1 CAM&#258;R<br>
-CAM&#258;R NR.273<br>
-Jude&#x21B;ul S&#259;laj<br>
-Tel./fax.:0260672114<br>
-Email: scoalacamar@yahoo.com</p></font>
-<table align=center>
-<tr><td>
+<body>
+  <header>
+    <h1>Contact</h1>
+    <p>Suntem alături de elevi, părinți și comunitate</p>
+  </header>
 
-<div style="display:inline-block;background-color:#400000;padding:1px;text-align:center;width:600px">
-<a><img src="4i.JPG"></a></td></tr>
-<table>
+  <nav aria-label="Navigare principală">
+    <ul>
+      <li>
+        <a href="index.html">Acasă</a>
+      </li>
+
+      <li>
+        <a href="camar.html">Comuna Camăr</a>
+      </li>
+
+      <li>
+        <a href="istoric.html">Istoricul școlii</a>
+      </li>
+
+      <li>
+        <a href="CD.html">Cadre didactice</a>
+      </li>
+
+      <li>
+        <a href="nou.html">Noutăți</a>
+      </li>
+
+      <li>
+        <a href="contact.html" aria-current="page">
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="contact-layout">
+      <article class="card contact-details">
+        <h2>Școala Gimnazială Nr. 1 Camăr</h2>
+
+        <p>
+          Pentru informații suplimentare, ne puteți contacta
+          telefonic, prin e-mail sau ne puteți vizita la sediul
+          școlii.
+        </p>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">📍</div>
+
+            <div>
+              <strong>Adresă</strong>
+              <p>Camăr nr. 273, județul Sălaj</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">☎️</div>
+
+            <div>
+              <strong>Telefon / fax</strong>
+
+              <p>
+                <a href="tel:+40260672114">
+                  0260 672 114
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">✉️</div>
+
+            <div>
+              <strong>E-mail</strong>
+
+              <p>
+                <a href="mailto:scoalacamar@yahoo.com">
+                  scoalacamar@yahoo.com
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a
+            class="button"
+            href="mailto:scoalacamar@yahoo.com"
+          >
+            ✉️ Trimite un e-mail
+          </a>
+
+          <a
+            class="button"
+            href="https://www.google.com/maps/search/?api=1&query=%C8%98coala%20Gimnazial%C4%83%20Nr.%201%20Cam%C4%83r%2C%20Cam%C4%83r%20273%2C%20S%C4%83laj"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📍 Deschide harta
+          </a>
+        </div>
+      </article>
+
+      <aside class="card school-image">
+        <img
+          src="4i.JPG"
+          alt="Școala Gimnazială Nr. 1 Camăr"
+        >
+
+        <p class="image-caption">
+          Școala Gimnazială Nr. 1 Camăr
+        </p>
+      </aside>
+    </section>
+
+    <a class="back-link" href="index.html">
+      ← Înapoi la pagina principală
+    </a>
+  </main>
+
+  <footer>
+    <p>
+      <strong>Școala Gimnazială Nr. 1 Camăr</strong>
+    </p>
+
+    <p>
+      &copy; <span id="year"></span>
+      Toate drepturile rezervate.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
