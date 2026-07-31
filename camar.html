@@ -1,23 +1,441 @@
-<html>
+<!DOCTYPE html>
+<html lang="ro">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Comuna Camăr | Școala Gimnazială Nr. 1 Camăr</title>
+
+  <meta
+    name="description"
+    content="Prezentarea comunei Camăr, județul Sălaj."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: #33251f;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.75;
+      background:
+        linear-gradient(
+          rgba(255, 250, 242, 0.94),
+          rgba(255, 250, 242, 0.94)
+        ),
+        url("Ht3.jpg") center / cover fixed;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 42px 16px 34px;
+      color: white;
+      text-align: center;
+      background:
+        linear-gradient(
+          rgba(67, 30, 18, 0.76),
+          rgba(67, 30, 18, 0.93)
+        ),
+        url("Ht3.jpg") center / cover;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      color: #ffe4bd;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      font-style: italic;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #4b2417;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin: 0;
+      padding: 8px;
+      list-style: none;
+    }
+
+    nav a {
+      display: block;
+      padding: 10px 15px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible,
+    nav a[aria-current="page"] {
+      background: #965437;
+      outline: none;
+    }
+
+    nav a:hover {
+      transform: translateY(-1px);
+    }
+
+    main {
+      padding: 38px 0 55px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(139, 74, 47, 0.18);
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(65, 34, 20, 0.16);
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 290px;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .intro-text {
+      padding: 32px;
+    }
+
+    .intro-text h2 {
+      margin: 0 0 16px;
+      color: #4b2417;
+      font-size: 1.8rem;
+      line-height: 1.3;
+    }
+
+    .intro-text p {
+      margin: 0;
+      font-size: 1.07rem;
+      text-align: justify;
+      text-indent: 2em;
+    }
+
+    .map-button {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 12px 19px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      background: #4b2417;
+      border-radius: 9px;
+      box-shadow: 0 6px 14px rgba(65, 34, 20, 0.18);
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .map-button:hover,
+    .map-button:focus-visible {
+      background: #965437;
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .emblem-card {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .emblem-card img {
+      width: min(220px, 100%);
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(65, 34, 20, 0.18);
+    }
+
+    .emblem-card p {
+      margin: 14px 0 0;
+      color: #674332;
+      font-weight: bold;
+    }
+
+    .continuous-text {
+      padding: 36px;
+    }
+
+    .continuous-text p {
+      margin: 0 0 20px;
+      text-align: justify;
+      text-indent: 2em;
+    }
+
+    .continuous-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .continuous-text strong {
+      color: #4b2417;
+      font-size: 1.07rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 11px 18px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      background: #4b2417;
+      border-radius: 9px;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      background: #965437;
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    footer {
+      padding: 24px 16px;
+      color: white;
+      text-align: center;
+      background: #4b2417;
+    }
+
+    footer p {
+      margin: 3px 0;
+    }
+
+    @media (max-width: 850px) {
+      .intro {
+        grid-template-columns: 1fr;
+      }
+
+      .emblem-card {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: calc(100% - 20px);
+      }
+
+      header {
+        padding-top: 32px;
+      }
+
+      nav ul {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+      nav a {
+        white-space: nowrap;
+      }
+
+      main {
+        padding-top: 24px;
+      }
+
+      .intro-text,
+      .continuous-text {
+        padding: 23px;
+      }
+
+      .intro-text p,
+      .continuous-text p {
+        text-indent: 1.4em;
+      }
+    }
+  </style>
 </head>
-<body background="Ht3.jpg">
 
-<table align="center" width=1000>
-<tr><td colspan=2 ><p align="center"><font color="400000" size=6 face="Bookman old style" ><B>COMUNA CAM&Atilde;R</B></font></p><br></td></tr>
+<body>
+  <header>
+    <h1>Comuna Camăr</h1>
+    <p>Istorie, comunitate și tradiție în județul Sălaj</p>
+  </header>
 
-<tr>
+  <nav aria-label="Navigare principală">
+    <ul>
+      <li>
+        <a href="index.html">Acasă</a>
+      </li>
 
-<td ><p align="justify"><font size=4 face="Bookman old style" color="400000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comuna Cam&atilde;r este situat&atilde; &icirc;n partea vestic&atilde; a jude&#355;ului S&atilde;laj. Se afl&atilde; la o distan&#355;&atilde; de 57 km de la Zal&atilde;u, resedin&#355;a judetului. Comuna se &icirc;ntinde pe o suprafa&#355;&atilde; deluroas&atilde; des acoperit&atilde; de p&atilde;duri, segmentat&atilde; de v&atilde;i. Comuna Cam&atilde;r care apar&#355;ine Dealurilor S&atilde;lajului, a c&atilde;ror &icirc;n&atilde;l&#355;ime medie este de 300-350 m, este &icirc;mprejmuit&atilde; de v&atilde;i largi cu p&atilde;duri, livezi, vii  &#351;i p&atilde;&#351;uni.Cea mai mare localitate bihorean&atilde;,aflat&atilde; &icirc;n apropierea Cam&atilde;rului este Suplacul de Barc&atilde;u (8 km). La nord se &icirc;nvecineaz&atilde; cu satul Dumusl&atilde;u, la est cu satul Carastelec, la sud cu satul Z&atilde;uan, iar la vest cu localit&atilde;tile Le&#351;mir &#351;i &#350;umal. De re&#351;edin&#355;a de jude&#355;, Zal&atilde;u, se afl&atilde; la o distan&#355;&atilde; de 57 km, de &#350;imleu Silvaniei la 26 km, iar cea mai apropriat&atilde; sta&#355;ie CFR (Ip) se afl&atilde; la 13 km.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prin organizarea targurilor s&atilde;pt&atilde;manale, Cam&atilde;rul a devenit din mijlocul secolului al 15-lea centrul comercial al zonei. Privilegiul de organizare de targuri regulate &#351;i-a dobandit prin intermediul familiei Kemeri, de la Hunyadi Janos, &icirc;n anul 1447. Statutul de ora&#351; campenesc &#351;i-a p&atilde;strat mult timp, &icirc;n secolul al 18-lea fiind unul dintre cele mai populate ora&#351;e din zon&atilde;. Pan&atilde;la &icirc;nceputul secolului al 18-lea Cam&atilde;rul era o comun&atilde; locuit&atilde; numai de maghiari, prezen&#355;a rom&acirc;nilor se dateaz&atilde; din anul 1720. Datele ultimului recens&atilde;m&acirc;nt (1992) ne arat&atilde; c&atilde; popula&#355;ia comunei este de 1999 oameni, forma&#355;i &icirc;n mare majoritate de maghiari (91.9%), dar &#351;i de rom&acirc;ni (6.8%), &#351;i &#355;igani. Marea majoritate a locuitorilor se ocup&atilde; cu agricultur&atilde;.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Majoritatea popula&#355;iei este de religie reformat&atilde;. Biserica de ast&atilde;zi s-a &icirc;n&atilde;l&#355;at &icirc;ntre anii 1800-1802. &Icirc;n 1897 s-a fondat la Cam&atilde;r prima comunitate baptist&atilde; din S&atilde;laj. Rom&acirc;nii din Cam&atilde;r sunt de religie greco-catolic&atilde;. Biserica de lemn, &icirc;n&atilde;l&#355;at&atilde; &icirc;n a doua jum&atilde;tate a secolului al 18-lea, este declarat&atilde; monument istoric.
-</font></p>
-</td></tr>
-</table>
+      <li>
+        <a href="camar.html" aria-current="page">
+          Comuna Camăr
+        </a>
+      </li>
 
-<table align="center" >
-<tr><td><img src="cimer.jpg"></td></tr>
-</table>
-</font>
+      <li>
+        <a href="istoric.html">Istoricul școlii</a>
+      </li>
+
+      <li>
+        <a href="CD.html">Cadre didactice</a>
+      </li>
+
+      <li>
+        <a href="nou.html">Noutăți</a>
+      </li>
+
+      <li>
+        <a href="contact.html">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="intro">
+      <article class="card intro-text">
+        <h2>Despre comuna Camăr</h2>
+
+        <p>
+          Comuna Camăr este situată în partea vestică a județului
+          Sălaj, într-o zonă deluroasă, acoperită de păduri și
+          străbătută de văi, livezi, vii și pășuni.
+        </p>
+
+        <a
+          class="map-button"
+          href="https://www.google.com/maps/search/?api=1&query=Cam%C4%83r%2C%20S%C4%83laj%2C%20Rom%C3%A2nia"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📍 Camăr pe Google Maps
+        </a>
+      </article>
+
+      <aside class="card emblem-card">
+        <img
+          src="cimer.jpg"
+          alt="Stema comunei Camăr"
+        >
+
+        <p>Stema comunei Camăr</p>
+      </aside>
+    </section>
+
+    <section class="card continuous-text">
+      <p>
+        <strong>Așezarea geografică.</strong>
+        Comuna Camăr este situată în partea vestică a județului
+        Sălaj, la o distanță de aproximativ 57 de kilometri de
+        municipiul Zalău. Localitatea aparține Dealurilor Sălajului,
+        a căror înălțime medie este de aproximativ 300–350 de metri,
+        și este înconjurată de văi largi, păduri, livezi, vii și
+        pășuni. Cea mai apropiată localitate importantă din județul
+        Bihor este Suplacu de Barcău, aflată la aproximativ
+        8 kilometri.
+      </p>
+
+      <p>
+        <strong>Localitățile învecinate.</strong>
+        La nord, Camăr se învecinează cu localitatea Dumuslău,
+        la est cu Carastelec, la sud cu Zăuan, iar la vest cu
+        localitățile Leșmir și Șumal. Comuna se află la aproximativ
+        26 de kilometri de Șimleu Silvaniei, iar cea mai apropiată
+        stație de cale ferată este în localitatea Ip, la aproximativ
+        13 kilometri.
+      </p>
+
+      <p>
+        <strong>Repere istorice și economice.</strong>
+        Prin organizarea târgurilor săptămânale, Camărul a devenit,
+        începând din mijlocul secolului al XV-lea, un important
+        centru comercial al zonei. Privilegiul de a organiza
+        târguri regulate a fost dobândit prin intermediul familiei
+        Kemeri de la Ioan de Hunedoara, în anul 1447. Localitatea
+        și-a păstrat multă vreme statutul de târg, iar în secolul
+        al XVIII-lea era una dintre cele mai populate așezări din
+        zonă. Principala ocupație tradițională a locuitorilor a
+        fost agricultura, favorizată de relieful și resursele
+        naturale ale regiunii.
+      </p>
+
+      <p>
+        <strong>Comunitatea locală.</strong>
+        Până la începutul secolului al XVIII-lea, Camărul era
+        locuit în principal de maghiari, prezența populației române
+        fiind consemnată începând cu anul 1720. De-a lungul
+        timpului, în comună au trăit împreună comunități de
+        maghiari, români și romi.
+      </p>
+
+      <p>
+        <strong>Patrimoniul religios.</strong>
+        Majoritatea populației locale aparține tradiției reformate.
+        Biserica reformată actuală a fost construită între anii
+        1800 și 1802. În anul 1897 a fost înființată la Camăr prima
+        comunitate baptistă din județul Sălaj. Biserica de lemn,
+        ridicată în a doua jumătate a secolului al XVIII-lea, este
+        declarată monument istoric.
+      </p>
+
+      <p>
+        <strong>Date demografice istorice.</strong>
+        Potrivit datelor recensământului din anul 1992, comuna avea
+        1.999 de locuitori. Populația era formată în principal din
+        maghiari, alături de comunități de români și romi. Aceste
+        informații sunt păstrate ca date istorice și nu reprezintă
+        situația demografică actuală.
+      </p>
+    </section>
+
+    <a class="back-link" href="index.html">
+      ← Înapoi la pagina principală
+    </a>
+  </main>
+
+  <footer>
+    <p>
+      <strong>Școala Gimnazială Nr. 1 Camăr</strong>
+    </p>
+
+    <p>
+      &copy; <span id="year"></span>
+      Toate drepturile rezervate.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
